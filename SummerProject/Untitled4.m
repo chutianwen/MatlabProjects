@@ -1,0 +1,55 @@
+%%  parameters
+syms pi;
+t1=-pi/2;
+t2=0;
+t3=-pi/2;
+t4=pi/2;
+t5=-pi/2;
+t6=0;
+a1=0;
+a2=270;
+a3=70;
+a4=0;
+a5=0;
+a6=0;
+d1=290;
+d2=0;
+d3=0;
+d4=302;
+d5=0;
+d6=72;
+
+
+%% define theta[]
+syms theta1 theta2 theta3 theta4 theta5 theta6;
+% theta1=2*pi/180;
+% theta2=25*pi/180;
+% theta3=2*pi/180;
+% theta4=2*pi/180;
+% theta5=2*pi/180;
+% theta6=2*pi/180;
+T_1to0=[cos(theta1) -sin(theta1)*cos(t1) sin(theta1)*sin(t1) a1*cos(theta1);
+        sin(theta1) cos(theta1)*cos(t1)  -cos(theta1)*sin(t1) a1*sin(theta1);
+        0           sin(t1)             cos(t1)                 d1;
+        0               0                   0                       1     ];
+ T_2to1=[cos(theta2) -sin(theta2)*cos(t2) sin(theta2)*sin(t2) a2*cos(theta2);
+        sin(theta2) cos(theta2)*cos(t2)  -cos(theta2)*sin(t2) a2*sin(theta2);
+        0           sin(t2)             cos(t2)                 d2;
+        0               0                   0                       1     ];
+ T_3to2=[cos(theta3) -sin(theta3)*cos(t3) sin(theta3)*sin(t3) a3*cos(theta3);
+        sin(theta3) cos(theta3)*cos(t3)  -cos(theta3)*sin(t3) a3*sin(theta3);
+        0           sin(t3)             cos(t3)                 d3;
+        0               0                   0                       1     ];
+ T_4to3=[cos(theta4) -sin(theta4)*cos(t4) sin(theta4)*sin(t4) a4*cos(theta4);
+        sin(theta4) cos(theta4)*cos(t4)  -cos(theta4)*sin(t4) a4*sin(theta4);
+        0           sin(t4)             cos(t4)                 d4;
+        0               0                   0                       1     ];
+ T_5to4=[cos(theta5) -sin(theta5)*cos(t5) sin(theta5)*sin(t5) a5*cos(theta5);
+        sin(theta5) cos(theta5)*cos(t5)  -cos(theta5)*sin(t5) a5*sin(theta5);
+        0           sin(t5)             cos(t5)                 d5;
+        0               0                   0                       1     ];
+ T_6to5=[cos(theta6) -sin(theta6)*cos(t6) sin(theta6)*sin(t6) a6*cos(theta6);
+        sin(theta6) cos(theta6)*cos(t6)  -cos(theta6)*sin(t6) a6*sin(theta6);
+        0           sin(t6)             cos(t6)                 d6;
+        0               0                   0                       1     ];
+ T_6to0=T_1to0*T_2to1*T_3to2*T_4to3*T_5to4*T_6to5;

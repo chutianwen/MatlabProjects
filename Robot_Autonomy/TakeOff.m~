@@ -1,0 +1,23 @@
+function  = Takeoff(flag_takeoff)
+
+if flag_takeoff == 0 
+    display "no command then no action"
+    flag_hover_i = 0;
+else
+    
+    Error_pos = [];
+    Error_vel = [];
+    Toleration_pos = 1e-3;
+    Toleration_vel = 1e-3;
+    
+    
+    if (norm(Error_pos) < Toleration_pos && norm(Error_vel) < Toleration_vel)
+        flag_hover_i = 1;
+    end
+end
+
+
+
+
+
+end
